@@ -11,6 +11,7 @@ class HomeScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Image style={{position: 'absolute', top: 50 + '%', marginTop: -150, width: 200, height: 67}} source={config.images.logo} />
                 <TouchableOpacity style={styles.registerButton}>
                     <Text style={styles.registerBtnText}>Create New Account</Text>
                 </TouchableOpacity>
@@ -26,7 +27,7 @@ class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
         width: 100 + '%',

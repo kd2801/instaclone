@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Button } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image } from 'react-native';
+import config from '../../config/index';
 
 class Login extends Component {
 
@@ -20,18 +21,26 @@ class Login extends Component {
                 <View style={{
                     width: 90 + '%',
                     }}>
+                    <Image style={{position: 'absolute', top: 50 + '%', marginTop: -150, width: 200, height: 67}} source={config.images.logo} />
                     <TextInput
                         style={styles.inputField}
+                        placeHolderStyle={styles.placeholder}
                         placeholder="Phone number, email or username" />
                     <TextInput
                         style={styles.inputField}
                         secureTextEntry={true}
+                        placeHolderStyle={styles.placeholder}
                         placeholder="Password" />
                     <TouchableOpacity style={styles.loginBtn} onPress={() => this.login()}>
-                        <Text style={{ textAlign: 'center', color: 'rgb(255,255,255)', fontWeight: '600', flex: 1}}>Log In</Text>
+                        <Text style={{ color: 'rgb(255,255,255)', fontWeight: '600'}}>Log In</Text>
                     </TouchableOpacity>
                 </View>
-                <Text>Forgot your login details? Get help signing in.</Text>
+                <Text style={styles.forgotText}>Forgot your login details? <Text style={{color: '#000', fontWeight: '600'}}>Get help signing in.</Text></Text>
+                <View style={{flexDirection: 'row', marginTop: 15, width: 90 + '%'}}>
+                    <View style={{backgroundColor: '#ccc', height: 1, flex: 1, alignSelf: 'center'}} />
+                    <Text style={{ alignSelf:'center', paddingHorizontal:5, fontSize: 12, color: '#ccc', fontWeight: '600' }}>OR</Text>
+                    <View style={{backgroundColor: '#ccc', height: 1, flex: 1, alignSelf: 'center'}} />
+                </View>
             </View>
         )
     }
@@ -44,18 +53,32 @@ const styles = StyleSheet.create({
         height: 36,
         borderColor: "#ccc",
         borderWidth: 1,
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 4
+        padding: 12,
+        marginBottom: 18,
+        borderRadius: 4,
+        backgroundColor: 'rgba(0,0,0,0.02)'
     },
     loginBtn: {
+        lineHeight: 36,
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: 4,
         borderWidth: 0.5,
         borderColor: '#3897f0',
         height: 36,
         backgroundColor: '#3897f0',
-        justifyContent: 'center',
-        alignItems: 'center'
+    },
+    forgotText: {
+        color: '#ccc',
+        marginTop: 15,
+        fontSize: 10
+    },
+    orView: {
+        marginTop: 15
+    },
+    placeholder: {
+        fontWeight: '600',
+        color: '#ccc'
     }
 
 });
