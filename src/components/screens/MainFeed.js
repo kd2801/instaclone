@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import PostFeed from "../containers/PostFeed";
 import Stories from "../containers/Stories";
 
@@ -10,10 +10,10 @@ class MainFeed extends Component {
                 <View style={styles.tempNav}>
                     <Text>Instagram</Text>
                 </View>
-                <View>
+                <ScrollView>
                     <Stories/>
-                </View>
-                <PostFeed/>
+                    <PostFeed/>
+                </ScrollView>
             </View>
         )
     }
