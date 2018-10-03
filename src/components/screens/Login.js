@@ -21,7 +21,7 @@ class Login extends Component {
                 <View style={{
                     width: 90 + '%',
                     }}>
-                    <Image style={{position: 'absolute', top: 50 + '%', marginTop: -150, width: 200, height: 67}} source={config.images.logo} />
+                    <Image style={{position: 'absolute', top: 50 + '%', marginTop: -150, width: 200, height: 67, alignSelf: 'center'}} source={config.images.logo} />
                     <TextInput
                         style={styles.inputField}
                         placeHolderStyle={styles.placeholder}
@@ -40,6 +40,9 @@ class Login extends Component {
                     <View style={{backgroundColor: '#ccc', height: 1, flex: 1, alignSelf: 'center'}} />
                     <Text style={{ alignSelf:'center', paddingHorizontal:5, fontSize: 12, color: '#ccc', fontWeight: '600' }}>OR</Text>
                     <View style={{backgroundColor: '#ccc', height: 1, flex: 1, alignSelf: 'center'}} />
+                </View>
+                <View style={{marginTop: 20}}>
+                    <Text style={{color: '#3897f0', fontWeight: '700'}}>Log in with Facebook</Text>
                 </View>
             </View>
         )

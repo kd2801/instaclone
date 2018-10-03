@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import PostFeed from "../containers/PostFeed";
+import Stories from "../containers/Stories";
 
 class MainFeed extends Component {
     render() {
@@ -8,6 +9,9 @@ class MainFeed extends Component {
             <View style={{ flex: 1, width: 100 + '%', height: 100 + '%'}}>
                 <View style={styles.tempNav}>
                     <Text>Instagram</Text>
+                </View>
+                <View>
+                    <Stories/>
                 </View>
                 <PostFeed/>
             </View>
