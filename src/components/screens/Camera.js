@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, TextInput, TouchableOpacity, Image, RefreshControl } from 'react-native';
 import PhotoGrid from 'react-native-image-grid';
 import config from '../../config/index';
 import Genres from "../containers/Genres";
@@ -8,7 +8,8 @@ class Camera extends Component {
     constructor() {
         super();
         this.state = {
-            items: []
+            items: [],
+            refreshing: false
         };
     }
 
@@ -36,6 +37,14 @@ class Camera extends Component {
         )
     }
 
+    _onRefresh = () => {
+        this.setState({refreshing: true});
+
+        setTimeout(() => {
+            this.setState({refreshing: false});
+        }, 3000);
+    };
+
     render() {
         return (
             <View style={styles.container}>
@@ -46,11 +55,16 @@ class Camera extends Component {
                     <Genres/>
                 </View>
                 <View style={{width: 100 + '%', height: 80 + '%', marginTop: 5}}>
-                    <ScrollView>
+                    <ScrollView refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.refreshing}
+                            onRefresh={this._onRefresh}
+                        />
+                    }>
                         <PhotoGrid
                             data = { this.state.items }
                             itemsPerRow = { 2 }
-                            itemMargin = { 1 }
+                            itemMargin = { 0.5 }
                             itemPaddingHorizontal={1}
                             renderItem = { this.renderItem }
                         />

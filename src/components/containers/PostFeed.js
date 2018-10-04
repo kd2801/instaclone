@@ -5,7 +5,7 @@ import Post from "../presentations/post";
 export default class PostFeed extends Component {
 
     _renderPost() {
-        return <Post/>
+        return <Post context={this}/>
     }
 
     _returnKey(item) {

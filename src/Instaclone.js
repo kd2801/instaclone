@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { MainFeed, Login, Camera, Profile, Register, Home } from './components/screens';
-import { SwitchNavigator, TabNavigator, StackNavigator } from 'react-navigation';
+import { SwitchNavigator, createBottomTabNavigator, StackNavigator } from 'react-navigation';
 
-const Tabs = TabNavigator({
+const Tabs = createBottomTabNavigator({
     feed: MainFeed,
     camera: Camera,
     profile: Profile
@@ -11,12 +11,12 @@ const Tabs = TabNavigator({
 const IntroStack = SwitchNavigator({
     home: Home,
     register: Register,
-    login: Login
-
+    login: Login,
+    camera: Camera
 });
 
 const MainStack = SwitchNavigator({
-    intro: Camera,
+    intro: IntroStack,
     main: Tabs
 });
 

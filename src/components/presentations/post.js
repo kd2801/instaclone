@@ -18,6 +18,10 @@ class Post extends Component {
         });
     }
 
+    goToGenre() {
+        this.props.navigation.navigate('camera');
+    }
+
     componentDidMount() {
         this.setState({
             screenWidth: Dimensions.get("window").width
@@ -41,9 +45,9 @@ class Post extends Component {
                             }}/>
                         <Text style={{ marginLeft: 10 }}>Keshav Dhawan</Text>
                     </View>
-                    <View style={{ alignItems: 'center' }}>
+                    <TouchableOpacity style={{ alignItems: 'center' }} onPress={() => this.goToGenre()}>
                         <Text style={{ fontSize: 30 }}>...</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <TouchableOpacity
                     activeOpacity={0.9}

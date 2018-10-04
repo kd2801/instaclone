@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Image, View } from 'react-native';
 import config from '../../config/index';
 
 class Genre extends Component {
@@ -12,9 +12,11 @@ class Genre extends Component {
 
     render() {
         return (
-            <TouchableOpacity style={styles.genreContainer}>
-                <Image style={{width: 100 + '%', height: 100 + '%', borderRadius: 10}} source={{uri: this.state.randomImage}} />
-            </TouchableOpacity>
+            <View>
+                <TouchableOpacity style={styles.genreContainer}>
+                    <Image style={{width: 100 + '%', height: 100 + '%', borderRadius: 10}} source={{uri: this.state.randomImage}} />
+                </TouchableOpacity>
+            </View>
         );
     }
 }
