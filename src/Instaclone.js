@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { MainFeed, Login, Camera, Profile, Register, Home } from './components/screens';
 import { SwitchNavigator, TabNavigator, StackNavigator } from 'react-navigation';
 
-const Tabs = SwitchNavigator({
+const Tabs = TabNavigator({
     feed: MainFeed,
     camera: Camera,
     profile: Profile
@@ -16,7 +16,7 @@ const IntroStack = SwitchNavigator({
 });
 
 const MainStack = SwitchNavigator({
-    intro: IntroStack,
+    intro: Camera,
     main: Tabs
 });
 

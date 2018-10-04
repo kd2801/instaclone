@@ -8,11 +8,17 @@ class Story extends Component {
 
     render() {
         return (
-            <Image
-                style={styles.storyContainer}
-                source={{
-                    uri: 'https://lh3.googleusercontent.com/8nBV5gaDOYVeu94aun7PaTpn1Tk0B5FwwNyOcNM83-yHaH-_YarsEbwUULNSk8GBktpr6eZx3QbTVzVimZbk1Q0GVLw'
-                }}/>
+            <View style={{margin: 5, position: 'relative'}}>
+                <Image
+                    style={styles.storyContainer}
+                    source={{
+                        uri: 'https://lh3.googleusercontent.com/8nBV5gaDOYVeu94aun7PaTpn1Tk0B5FwwNyOcNM83-yHaH-_YarsEbwUULNSk8GBktpr6eZx3QbTVzVimZbk1Q0GVLw'
+                    }}/>
+                <View style={styles.blueBubble}>
+                    <Text style={{textAlign: 'center', color: '#fff', fontSize: 10, fontWeight: '600'}}>+</Text>
+                </View>
+                <Text style={{fontSize: 10, alignSelf: 'center', marginTop: -10}}>keshav</Text>
+            </View>
         )
     }
 }
@@ -26,6 +32,17 @@ const styles = StyleSheet.create({
         marginHorizontal: 7,
         margin: 15,
         borderColor: '#fdf497',
+    },
+    blueBubble: {
+        height: 15,
+        width: 15,
+        borderRadius: 10,
+        backgroundColor: '#3897f0',
+        position: 'absolute',
+        top: 55,
+        right: 10,
+        borderColor: '#fff',
+        borderWidth: 1
     }
 
 });
