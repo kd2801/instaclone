@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, ScrollView, RefreshControl } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, RefreshControl, FlatList, Modal, TouchableOpacity } from 'react-native';
 import PostFeed from "../containers/PostFeed";
 import Stories from "../containers/Stories";
+import FeedPopup from "../popups/FeedPopup";
+
 
 class MainFeed extends Component {
     constructor() {
         super();
         this.state = {
-            refreshing: false
+            refreshing: false,
+            isPopupOpen: false
         };
     }
 
@@ -19,11 +22,15 @@ class MainFeed extends Component {
         }, 3000);
     };
 
+    enablePopup() {
+        this.state.isPopupOpen = true;
+    }
+
     render() {
         return (
             <View style={{ flex: 1, width: 100 + '%', height: 100 + '%'}}>
                 <View style={styles.tempNav}>
-                    <Text>Instagram</Text>
+                    <Text onPress={() => this.enablePopup()}>Instagram</Text>
                 </View>
                 <ScrollView refreshControl={
                     <RefreshControl
@@ -34,6 +41,7 @@ class MainFeed extends Component {
                     <Stories/>
                     <PostFeed/>
                 </ScrollView>
+                <FeedPopup openPopup={this.state.isPopupOpen}/>
             </View>
         )
     }

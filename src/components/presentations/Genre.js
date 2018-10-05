@@ -14,7 +14,7 @@ class Genre extends Component {
         return (
             <View>
                 <TouchableOpacity style={styles.genreContainer}>
-                    <Image style={{width: 100 + '%', height: 100 + '%', borderRadius: 10}} source={{uri: this.state.randomImage}} />
+                    <Image style={{width: 100 + '%', height: 100 + '%', borderRadius: 10, opacity: 0.4}} source={{uri: this.state.randomImage}} />
                 </TouchableOpacity>
             </View>
         );

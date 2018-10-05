@@ -4,7 +4,10 @@ export default {
         messageIcon: require('../../assets/bubble.png'),
         shareIcon: require('../../assets/arrow.png'),
         logo: require('../../assets/logo.png'),
-        camera: require('../../assets/camera.svg'),
+        camera: require('../../assets/plus.png'),
+        profile: require('../../assets/avatar.png'),
+        search: require('../../assets/search.png'),
+        home: require('../../assets/home.png')
     },
     styleConstants: {
         rowHeight: 50

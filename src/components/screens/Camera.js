@@ -48,13 +48,13 @@ class Camera extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.searchContainer}>
-                    <TextInput style={{width: 100 + '%', padding: 5}}/>
+                <View style={[styles.searchContainer, {display: 'flex', alignItems: 'center'}]}>
+                    <Text placeholder="Search" style={{width: 100 + '%', marginTop: 7 + '%', marginLeft: 15 + '%', color: '#ccc'}}>Search</Text>
                 </View>
                 <View style={{width: 100 + '%', height: 15 + '%', paddingTop: 10, paddingBottom: 10}}>
                     <Genres/>
                 </View>
-                <View style={{width: 100 + '%', height: 80 + '%', marginTop: 5}}>
+                <View style={{width: 100 + '%', height: 75 + '%', marginTop: 5}}>
                     <ScrollView refreshControl={
                         <RefreshControl
                             refreshing={this.state.refreshing}
@@ -84,14 +84,12 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     searchContainer: {
-        width: 90 + '%',
-        height: 5 + '%',
+        width: 100 + '%',
+        height: 10 + '%',
         justifyContent: 'center',
         alignItems: 'center',
         borderBottomWidth: 1,
-        borderColor: '#ccc',
-        padding: 5,
-        marginHorizontal: 5
+        borderColor: '#ccc'
     }
 });
 
