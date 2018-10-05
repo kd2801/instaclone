@@ -18,6 +18,7 @@ class Camera extends Component {
             return { id: i, src: image }
         });
         this.setState({ items });
+        console.log(this.state);
     }
 
     renderItem(item, itemSize, itemPaddingHorizontal) {
